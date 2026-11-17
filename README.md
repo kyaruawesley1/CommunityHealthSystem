@@ -44,7 +44,7 @@ To run this project locally for testing or evaluation:
 4. Set up an Android Virtual Device (AVD). A **Pixel 10a (API 34-37)** emulator is recommended.
 5. Click **Run (Shift + F10)** to install and launch the application.
 
-## 👥 Group 8 Members & Contributions
+## Group 8 Members & Contributions
 This project was collaboratively developed using GitHub branches and pull requests.
 * **167409 Katama David Michael** - *(e.g., UI/UX Design, Navigation Graph, Booking Logic)*
 * **191339 Ahumuza Lowena** - *(e.g., SQLite Database Implementation, Repository Architecture)*
@@ -52,6 +52,3 @@ This project was collaboratively developed using GitHub branches and pull reques
 * **193183 Tugumisirize Patricia** - *(e.g., Dashboard RecyclerView, Dynamic Adapters, CRUD Testing)*
 
 ---
-This README serves as excellent documentation for your repository. It explains the problem, the solution, the exact tech stack you used, and outlines the architecture perfectly for the lecturer to review. 
-
-Make sure to push this to your GitHub repository's main folder. Best of luck with your CAT 2 presentation and technical defense—you have built a highly functional and robust application!
