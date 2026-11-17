@@ -21,6 +21,9 @@ class BookAppointmentFragment : Fragment(R.layout.fragment_book_appointment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentBookAppointmentBinding.bind(view)
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         val services = arrayOf("Health Education", "Maternal/Child Wellness", "Fitness Tracking")
         binding.spinnerServices.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, services)

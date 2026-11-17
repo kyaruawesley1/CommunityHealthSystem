@@ -31,10 +31,21 @@
         android:name="com.example.communityhealthsystem.ui.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard">
+
         <action
             android:id="@+id/action_dashboard_to_book"
             app:destination="@id/bookAppointmentFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_catalog"
+            app:destination="@id/serviceCatalogFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/serviceCatalogFragment"
+        android:name="com.example.communityhealthsystem.ui.ServiceCatalogFragment"
+        android:label="Service Catalog"
+        tools:layout="@layout/fragment_service_catalog" />
 
     <fragment
         android:id="@+id/bookAppointmentFragment"

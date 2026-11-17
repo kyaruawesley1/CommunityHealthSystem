@@ -27,12 +27,19 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         binding.recyclerViewAppointments.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAppointments.adapter = adapter
 
-        viewModel.getMyAppointments().observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+        // Toggle the Empty State based on the list size
+        viewModel.getMyAppointments().observe(viewLifecycleOwner) { appointments ->
+            adapter.submitList(appointments)
+            binding.tvEmptyState.visibility = if (appointments.isEmpty()) View.VISIBLE else View.GONE
         }
 
+        // Navigation Options
         binding.fabAddAppointment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboard_to_book)
+        }
+
+        binding.btnViewCatalog.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_catalog)
         }
     }
 }
