@@ -25,7 +25,13 @@ class BookAppointmentFragment : Fragment(R.layout.fragment_book_appointment) {
             findNavController().navigateUp()
         }
 
-        val services = arrayOf("Health Education", "Maternal/Child Wellness", "Fitness Tracking")
+        val services = arrayOf(
+            "Health Education",
+            "Maternal/Child Wellness",
+            "Fitness Tracking",
+            "Immunization & Vaccination",
+            "Mental Health Counseling"
+        )
         binding.spinnerServices.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, services)
 
         binding.btnSaveBooking.setOnClickListener {

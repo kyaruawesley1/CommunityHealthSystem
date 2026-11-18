@@ -27,10 +27,17 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         binding.recyclerViewAppointments.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAppointments.adapter = adapter
 
-        // Toggle the Empty State based on the list size
+        // Toggle the Empty State based on the list size and strictly hide the RecyclerView
         viewModel.getMyAppointments().observe(viewLifecycleOwner) { appointments ->
             adapter.submitList(appointments)
-            binding.tvEmptyState.visibility = if (appointments.isEmpty()) View.VISIBLE else View.GONE
+
+            if (appointments.isEmpty()) {
+                binding.tvEmptyState.visibility = View.VISIBLE
+                binding.recyclerViewAppointments.visibility = View.GONE
+            } else {
+                binding.tvEmptyState.visibility = View.GONE
+                binding.recyclerViewAppointments.visibility = View.VISIBLE
+            }
         }
 
         // Navigation Options
