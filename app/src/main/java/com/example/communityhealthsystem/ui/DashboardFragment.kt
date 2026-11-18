@@ -19,10 +19,24 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDashboardBinding.bind(view)
 
-        val adapter = AppointmentAdapter {
-            viewModel.deleteAppointment(it)
-            Toast.makeText(requireContext(), "Appointment Canceled", Toast.LENGTH_SHORT).show()
-        }
+        // Initialize the adapter with BOTH delete and edit click listeners
+        val adapter = AppointmentAdapter(
+            onDeleteClick = {
+                viewModel.deleteAppointment(it)
+                Toast.makeText(requireContext(), "Appointment Canceled", Toast.LENGTH_SHORT).show()
+            },
+            onEditClick = {
+                try {
+                    val bundle = Bundle().apply {
+                        putInt("appointmentId", it.id)
+                    }
+                    findNavController().navigate(R.id.action_dashboard_to_update, bundle)
+                } catch (e: Exception) {
+                    // PREVENTS THE CRASH: If the nav action is missing, it shows this toast instead.
+                    Toast.makeText(requireContext(), "Error: Please add 'action_dashboard_to_update' inside nav_graph.xml", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
 
         binding.recyclerViewAppointments.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAppointments.adapter = adapter

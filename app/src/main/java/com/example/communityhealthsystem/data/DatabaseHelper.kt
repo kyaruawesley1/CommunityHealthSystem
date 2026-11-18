@@ -60,11 +60,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "health_welln
         writableDatabase.delete("appointments", "id = ?", arrayOf(id.toString()))
     }
 
-    fun updateAppointment(id: Int, newDate: String, newTime: String) {
-        val values = ContentValues().apply {
+    fun updateAppointment(id: Int, newDate: String, newTime: String): Boolean {
+        val db = this.writableDatabase
+        val values = android.content.ContentValues().apply {
             put("date", newDate)
             put("time", newTime)
         }
-        writableDatabase.update("appointments", values, "id = ?", arrayOf(id.toString()))
+        val result = db.update("appointments", values, "id=?", arrayOf(id.toString()))
+        return result != -1
     }
 }

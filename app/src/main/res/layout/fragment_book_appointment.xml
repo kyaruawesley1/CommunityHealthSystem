@@ -49,7 +49,7 @@
             android:id="@+id/etBookingDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date (e.g. 2026-11-20)"
+            android:hint="Date (DD/MM/YYYY)"
             android:inputType="date"/>
     </com.google.android.material.textfield.TextInputLayout>
 

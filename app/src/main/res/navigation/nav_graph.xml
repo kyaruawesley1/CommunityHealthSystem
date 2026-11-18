@@ -39,6 +39,11 @@
         <action
             android:id="@+id/action_dashboard_to_catalog"
             app:destination="@id/serviceCatalogFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_update"
+            app:destination="@id/updateAppointmentFragment" />
+
     </fragment>
 
     <fragment
@@ -52,4 +57,11 @@
         android:name="com.example.communityhealthsystem.ui.BookAppointmentFragment"
         android:label="Book Appointment"
         tools:layout="@layout/fragment_book_appointment" />
+
+    <fragment
+        android:id="@+id/updateAppointmentFragment"
+        android:name="com.example.communityhealthsystem.ui.UpdateAppointmentFragment"
+        android:label="Reschedule Appointment"
+        tools:layout="@layout/fragment_update_appointment" />
+
 </navigation>

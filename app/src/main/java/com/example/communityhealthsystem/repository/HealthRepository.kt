@@ -11,7 +11,9 @@ class HealthRepository(private val dbHelper: DatabaseHelper) {
     suspend fun getAppointments(patientId: Int): List<Appointment> = withContext(Dispatchers.IO) { dbHelper.getUserAppointments(patientId) }
     suspend fun deleteAppointment(id: Int) = withContext(Dispatchers.IO) { dbHelper.deleteAppointment(id) }
 
-    suspend fun updateAppointment(id: Int, newDate: String, newTime: String) = withContext(Dispatchers.IO) {
-        dbHelper.updateAppointment(id, newDate, newTime)
+    suspend fun updateAppointment(id: Int, newDate: String, newTime: String) {
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            dbHelper.updateAppointment(id, newDate, newTime)
+        }
     }
 }

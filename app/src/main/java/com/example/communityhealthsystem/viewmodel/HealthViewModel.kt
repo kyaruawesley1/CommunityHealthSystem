@@ -37,9 +37,11 @@ class HealthViewModel(application: Application) : AndroidViewModel(application) 
         refreshAppointments()
     }
 
-    fun updateAppointment(id: Int, newDate: String, newTime: String) = viewModelScope.launch {
-        repository.updateAppointment(id, newDate, newTime)
-        refreshAppointments() // Automatically refreshes the Dashboard list
+    fun updateAppointment(id: Int, newDate: String, newTime: String) {
+        viewModelScope.launch {
+            repository.updateAppointment(id, newDate, newTime)
+            // Call your function that refreshes the list here, e.g., loadAppointments()
+        }
     }
 
 }
