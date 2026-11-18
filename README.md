@@ -46,9 +46,9 @@ To run this project locally for testing or evaluation:
 
 ## Group 8 Members & Contributions
 This project was collaboratively developed using GitHub branches and pull requests.
-* **167409 Katama David Michael** - *(e.g., UI/UX Design, Navigation Graph, Booking Logic)*
-* **191339 Ahumuza Lowena** - *(e.g., SQLite Database Implementation, Repository Architecture)*
-* **167044 Kyarua Wesley Ralph** - *(e.g., Authentication Logic, WorkManager Background Processing)*
-* **193183 Tugumisirize Patricia** - *(e.g., Dashboard RecyclerView, Dynamic Adapters, CRUD Testing)*
+* **167409 Katama David Michael** - *( Design, Navigation Graph, Booking Logic)*
+* **191339 Ahumuza Lowena** - *( SQLite Database Implementation, Repository Architecture)*
+* **167044 Kyarua Wesley Ralph** - *( Authentication Logic, WorkManager Background Processing)*
+* **193183 Tugumisirize Patricia** - *( Dashboard RecyclerView, Dynamic Adapters, CRUD Testing)*
 
 ---
