@@ -61,5 +61,6 @@
         android:layout_height="60dp"
         android:text="Sign Up"
         app:cornerRadius="12dp"
-        android:textSize="16sp"/>
+        android:textSize=
+    ="16sp"/>
 </LinearLayout>
