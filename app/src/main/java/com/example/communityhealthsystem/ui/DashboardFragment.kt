@@ -44,6 +44,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         // Toggle the Empty State based on the list size and strictly hide the RecyclerView
         viewModel.getMyAppointments().observe(viewLifecycleOwner) { appointments ->
             adapter.submitList(appointments)
+            binding.tvAppointmentCount.text = appointments.size.toString()
 
             if (appointments.isEmpty()) {
                 binding.tvEmptyState.visibility = View.VISIBLE
